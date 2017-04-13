@@ -1,0 +1,18 @@
+#{extends 'main.html' /}
+#{set title:'Admin login' /}
+
+<h1>Admin login page</h1>
+ <form action="/adminLogin" method="POST">
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" value="${flash.username}">
+    <span class="error">#{error 'username' /}</span>
+    <br>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password">
+    <span class="error">#{error 'password' /}</span>
+    #{authenticityToken /}
+    <br>
+    <button type="submit">Login</button>
+  </div>
+</form>
